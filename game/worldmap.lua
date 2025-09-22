@@ -69,16 +69,26 @@ end
 function worldmap.draw()
 	--world map
 	love.graphics.setColor(1,1,1)
-	love.graphics.draw(worldmapimg, 0, 0)
+	local scale = math.max(love.graphics.getWidth()/worldmapimg:getWidth(), love.graphics.getHeight() / worldmapimg:getHeight())
+	local startX = (love.graphics.getWidth() - worldmapimg:getWidth() * scale) * 0.5
+	local startY = (love.graphics.getHeight() - worldmapimg:getHeight() * scale) * 0.5
+	love.graphics.draw(worldmapimg, startX, startY, 0, scale, scale)
 
 	--level marker
 	love.graphics.setColor(1,1,1)
+	-- startX = (worldmapimg:getWidth() * 0.5 - 38 - startX) * scale
+	startX = love.graphics.getWidth() - 75 * levels
+	startY = love.graphics.getHeight() * 0.5 - (worldmapimg:getHeight() * 0.5 - 130) * scale
 	for i = 1, levels do
 		local q = 1
 		if i <= levelscompleted+1 then
 			q = 2
 		end
-		love.graphics.draw(levelmarkerimg, levelmarkerq[q], 38+75*(i-1), 130)
+		-- love.graphics.draw(levelmarkerimg, levelmarkerq[q], 38 + 75*(i-1), 130)
+		love.graphics.draw(levelmarkerimg, levelmarkerq[q], 
+			startX + 75 * (i-1), 
+			startY)
+			-- 130)
 	end
 
 	--marker
@@ -86,7 +96,7 @@ function worldmap.draw()
 	if fliptimer > 0.5 then
 		dirscale = -1
 	end
-	love.graphics.draw(playerimg, playerq[1][19], 48+75*(levelselection-1+markeroffset), 140, 0, dirscale, 1, 20, 40)
+	love.graphics.draw(playerimg, playerq[1][19], startX + 10 +75*(levelselection-1+markeroffset), startY + 10, 0, dirscale, 1, 20, 40)
 
 	--transitions
 	if transitionin then
@@ -114,7 +124,7 @@ end
 
 function worldmap.touchpressed(id, x, y, dx, dy, pressure)
 	local getbutton = function (x, y)
-		print("xy = "..x.." "..y)
+		-- print("xy = "..x.." "..y)
 		-- print("lef :"..buttons["left"])
 		-- print("r :"..buttons["right"])
 		-- print("esc :"..buttons["esc"])

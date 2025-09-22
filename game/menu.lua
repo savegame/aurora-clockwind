@@ -145,11 +145,12 @@ end
 function menu.draw()
 	love.graphics.setColor(1,1,1)
 	drawgear(10, 30, 70, gearrot)
-	drawgear(298, 120, 50, -gearrot)
+	drawgear(love.graphics.getWidth() - 22, 120, 50, -gearrot)
 	if menustate == "title" then
 		--title screen
 		love.graphics.setColor(1,1,1)
-		love.graphics.draw(titleimg, 57, 20)
+		-- love.graphics.draw(titleimg, 57, 20)
+		love.graphics.draw(titleimg, (love.graphics.getWidth() - titleimg:getWidth()) * 0.5, 20)
 		for i, s in pairs(titlemenu) do
 			local name = s
 			if i == titleselection then

@@ -947,10 +947,8 @@ end
 function game.touchreleased(id, x, y, dx, dy, pressure)
 	local currentbutton = getbuttonbyid(id)
 	if currentbutton == "unhandled" then
-		print("WARN: no screen button for: " .. id)
 		return
 	end
-	print("button "..currentbutton.." released")
 
 	if GJoystick.id == id then
 		GJoystick.id = nil

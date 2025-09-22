@@ -406,81 +406,18 @@ function love.touchpressed(id, x, y, dx, dy, pressure)
 	if _G[gamestate].touchpressed then
 		_G[gamestate].touchpressed(id, x, y , dx, dy, pressure)
 	end
-	-- if _G[gamestate].touchpressed then
-	-- 	-- landscape
-	-- 	local nx = love.graphics.getWidth();
-	-- 	local ny = 0;
-	-- 	local ndx = 0;
-	-- 	local ndy = 0;
-	-- 	if game_orientation == "landscape" then
-	-- 		nx =  y
-	-- 		ny = love.graphics.getWidth() - x
-	-- 		ndx = dy
-	-- 		ndy = dx
-	-- 	elseif game_orientation == "landscapeflipped" then
-	-- 		nx = love.graphics.getHeight() - y
-	-- 		ny = x
-	-- 		ndx = dy
-	-- 		ndy = dx
-	-- 	end
-	-- 	nx = nx / love.graphics.getHeight() * WINWIDTH
-	-- 	ny = ny / love.graphics.getWidth() * WINHEIGHT
-	-- 	_G[gamestate].touchpressed(id, nx, ny , ndx, ndy, pressure)
-	-- end
 end
 
 function love.touchreleased(id, x, y, dx, dy, pressure)
 	if _G[gamestate].touchreleased then
 		_G[gamestate].touchreleased(id, x, y , dx, dy, pressure)
 	end
-	-- if _G[gamestate].touchreleased then
-	-- 	-- landscape
-	-- 	local nx = love.graphics.getWidth();
-	-- 	local ny = 0;
-	-- 	local ndx = 0;
-	-- 	local ndy = 0;
-	-- 	if game_orientation == "landscape" then
-	-- 		nx =  y
-	-- 		ny = love.graphics.getWidth() - x
-	-- 		ndx = dy
-	-- 		ndy = dx
-	-- 	elseif game_orientation == "landscapeflipped" then
-	-- 		nx = love.graphics.getHeight() - y
-	-- 		ny = x
-	-- 		ndx = dy
-	-- 		ndy = dx
-	-- 	end
-	-- 	nx = nx / love.graphics.getHeight() * WINWIDTH
-	-- 	ny = ny / love.graphics.getWidth() * WINHEIGHT
-	-- 	_G[gamestate].touchreleased(id, nx, ny , ndx, ndy, pressure)
-	-- end
 end
 
 function love.touchmoved(id, x, y, dx, dy, pressure)
 	if _G[gamestate].touchmoved then
 		_G[gamestate].touchmoved(id, x, y , dx, dy, pressure)
 	end
-	-- if _G[gamestate].touchmoved then
-	-- 	-- landscape
-	-- 	local nx = love.graphics.getWidth();
-	-- 	local ny = 0;
-	-- 	local ndx = 0;
-	-- 	local ndy = 0;
-	-- 	if game_orientation == "landscape" then
-	-- 		nx =  y
-	-- 		ny = love.graphics.getWidth() - x
-	-- 		ndx = dy
-	-- 		ndy = dx
-	-- 	elseif game_orientation == "landscapeflipped" then
-	-- 		nx = love.graphics.getHeight() - y
-	-- 		ny = x
-	-- 		ndx = dy
-	-- 		ndy = dx
-	-- 	end
-	-- 	nx = nx / love.graphics.getHeight() * WINWIDTH
-	-- 	ny = ny / love.graphics.getWidth() * WINHEIGHT
-	-- 	_G[gamestate].touchmoved(id, nx, ny , ndx, ndy, pressure)
-	-- end
 end
 
 function setgamestate(state, args)

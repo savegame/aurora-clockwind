@@ -90,7 +90,7 @@ cmake \
     -Bbuild/%{_arch}/love \
     -DAURORAOS=YES \
     -DAURORAOS_APPDATA="%{_app_orgname}/%{_app_appname}" \
-    -DCMAKE_BUILD_TYPE=Debug \
+    -DCMAKE_BUILD_TYPE=Release \
     -DMODPLUG_INCLUDE_DIR=build/%{_arch}/libmodplug/usr/local/include \
     -DMODPLUG_LIBRARY=build/%{_arch}/libmodplug/libmodplug.so.1.0.0 \
     -DLUAJIT_INCLUDE_DIR=build/%{_arch}/LuaJIT/src/ \
