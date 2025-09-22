@@ -1,13 +1,14 @@
 %define _app_orgname ru.sashikknox
-%define _app_appname AwesomeGame
-%define _app_launcher_name Офигенная игра
+%define _app_appname clockwind
+%define _app_launcher_name Clock Wind
 
 Name:       %{_app_orgname}.%{_app_appname}
-Summary:    Love2D Game Example for AuroraOS
+Summary:    Alesan99 game Clockwind
 Release:    1
 Version:    1.0.0
 Group:      Amusements/Games
 License:    BSD3
+Url:        https://alesan99.itch.io/clockwind
 Source0:    %{name}.tar.gz
 
 %define __requires_exclude ^libvorbis.*\\.so.*|libopenal\\.so.*|libmpg123\\.so.*|libfreetype\\.so.*|libharfbuzz\\.so.*|libmodplug\\.so.*|libtheora\\.so.*|libtheoradec\\.so.*|libgraphite2\\.so.*|libliblove\\.so.*$
@@ -37,7 +38,10 @@ BuildRequires: ninja
 BuildRequires: lua
 
 %description
-"Game example for AuroraOS made with LÖVE engine"
+The mechanic of this game is time travel. Make your way 
+through 4 levels utilizing the passage of time in different 
+ways. This may involve making trees grow or turning a car 
+in to a flying car
 
 %prep
 %setup -q -n %{name}-%{version}
